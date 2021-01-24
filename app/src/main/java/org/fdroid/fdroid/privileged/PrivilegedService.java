@@ -28,6 +28,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.IPackageDeleteObserver;
 import android.content.pm.IPackageInstallObserver;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageInstaller;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -41,6 +42,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.lang.reflect.Method;
+import java.util.List;
 
 /**
  * This service provides an API via AIDL IPC for the main F-Droid app to install/delete packages.
@@ -135,6 +137,10 @@ public class PrivilegedService extends Service {
                 Log.e(TAG, "RemoteException", e1);
             }
         }
+    }
+
+    private List<PackageInfo> getInstalledPackagesImpl(int flags) {
+        return getPackageManager().getInstalledPackages(flags | PackageManager.MATCH_STATIC_SHARED_LIBRARIES);
     }
 
     private final BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
@@ -243,6 +249,11 @@ public class PrivilegedService extends Service {
             } else {
                 deletePackageImpl(packageName, flags, callback);
             }
+        }
+
+        @Override
+        public List<PackageInfo> getInstalledPackages(int flags) {
+            return getInstalledPackagesImpl(flags);
         }
     };
 
