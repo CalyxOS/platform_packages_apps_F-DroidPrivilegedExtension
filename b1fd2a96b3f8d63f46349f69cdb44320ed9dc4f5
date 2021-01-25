@@ -16,6 +16,24 @@
       "revId": "b1fd2a96b3f8d63f46349f69cdb44320ed9dc4f5",
       "serverId": "35266860-6252-469c-a67d-185064479fc0",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4f84a406_3c373478",
+        "filename": "app/src/main/Android.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2021-01-25T15:45:56Z",
+      "side": 1,
+      "message": "for some reason LOCAL_SDK_VERSION allows Uri and PackageInfo in the aidl where removing it (which is necessary to allow LOCAL_PRIVATE_PLATFORM_APIS which in turn enables access to MATCH_STATIC_SHARED_LIBRARIES) causes the aidl to not compile",
+      "parentUuid": "ea36795e_1c346ff9",
+      "revId": "b1fd2a96b3f8d63f46349f69cdb44320ed9dc4f5",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0",
+      "unresolved": true
     }
   ]
 }
