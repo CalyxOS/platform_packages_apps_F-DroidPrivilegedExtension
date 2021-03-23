@@ -1,0 +1,5 @@
+* Korjaa Android.mk rakennelmat
+
+* Lisätty uusia kieliä: albaani, bengali, ranska, heprea, hindi, uusnorja, slovakki
+
+* Anna Gradlen noutaa riippuvuudet Debianista
