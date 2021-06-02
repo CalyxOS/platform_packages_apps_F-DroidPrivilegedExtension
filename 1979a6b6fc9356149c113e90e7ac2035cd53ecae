@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "613ffae0_11148569",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-06-02T18:19:08Z",
+      "side": 1,
+      "message": "Don\u0027t want to add this to the list, even though in theory it should be safe since it\u0027s a system app and thus can\u0027t be replaced.",
+      "revId": "1979a6b6fc9356149c113e90e7ac2035cd53ecae",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
