@@ -36,6 +36,8 @@ public class ClientWhitelist {
     public static HashSet<Pair<String, String>> whitelist = new HashSet<>(Arrays.asList(
             // certificate SHA-256 of https//f-droid.org/F-Droid.apk
             new Pair<>("org.fdroid.fdroid", "43238d512c1e5eb2d6569f4a3afbf5523418b82e0a3ed1552770abb9a9c9ccab"),
+            // aosp testkey
+            new Pair<>("org.fdroid.fdroid", "a40da80a59d170caa950cf15c18c454d47a39b26989d8b640ecd745ba71bf5dc"),
             // walleye releasekey
             new Pair<>("org.fdroid.fdroid", "3bb5073980761a42bf81375d033d74dba544d7e05a143c1b6cb5fea0c5e1b4f8"),
             // sunfish releasekey
