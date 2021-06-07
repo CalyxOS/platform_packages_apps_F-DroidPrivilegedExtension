@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c3c0f4e_abac1ae3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-06-07T15:23:18Z",
+      "side": 1,
+      "message": "Need to actually rename, and only ship this in a followup build.",
+      "revId": "0b83fc431083fe0e1ff739219d0b315908f4c135",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
