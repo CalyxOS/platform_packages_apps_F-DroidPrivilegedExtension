@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7f651c6_6ab0133e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-09-10T07:32:26Z",
+      "side": 1,
+      "message": "We don\u0027t want RRO.\n\nWe need a way to change the signature during signing.",
+      "revId": "911f3bf776aac9206f2631ade036df3d69254981",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ca48d61_742e675d",
+        "filename": "app/src/main/java/org/fdroid/fdroid/privileged/AccessProtectionHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-09-10T07:32:26Z",
+      "side": 1,
+      "message": "This has to be in the xml too.",
+      "revId": "911f3bf776aac9206f2631ade036df3d69254981",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
