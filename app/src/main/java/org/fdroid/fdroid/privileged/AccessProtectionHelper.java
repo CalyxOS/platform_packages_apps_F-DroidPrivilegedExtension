@@ -35,18 +35,14 @@ import java.util.HashSet;
 
 public class AccessProtectionHelper {
 
+    private final static String WHITELIST_PACKAGE_NAME = "org.fdroid.fdroid";
+
     Context context;
     PackageManager pm;
-    HashSet<Pair<String, String>> whitelist;
 
     AccessProtectionHelper(Context context) {
-        this(context, ClientWhitelist.whitelist);
-    }
-
-    AccessProtectionHelper(Context context, HashSet<Pair<String, String>> whitelist) {
         this.context = context;
         this.pm = context.getPackageManager();
-        this.whitelist = whitelist;
     }
 
     /**
@@ -80,24 +76,21 @@ public class AccessProtectionHelper {
         try {
             byte[] currentPackageCert = getPackageCertificate(packageName);
 
-            for (Pair whitelistEntry : whitelist) {
-                String whitelistPackageName = (String) whitelistEntry.first;
-                String whitelistHashString = (String) whitelistEntry.second;
-                byte[] whitelistHash = hexStringToByteArray(whitelistHashString);
+            String whitelistHashString = (String) context.getString(R.string.certificate);
+            byte[] whitelistHash = hexStringToByteArray(whitelistHashString);
 
-                MessageDigest digest = MessageDigest.getInstance("SHA-256");
-                byte[] packageHash = digest.digest(currentPackageCert);
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] packageHash = digest.digest(currentPackageCert);
 
-                String packageHashString = new BigInteger(1, packageHash).toString(16);
-                Log.d(PrivilegedService.TAG, "Allowed cert hash: " + whitelistHashString);
-                Log.d(PrivilegedService.TAG, "Package cert hash: " + packageHashString);
+            String packageHashString = new BigInteger(1, packageHash).toString(16);
+            Log.d(PrivilegedService.TAG, "Allowed cert hash: " + whitelistHashString);
+            Log.d(PrivilegedService.TAG, "Package cert hash: " + packageHashString);
 
-                boolean packageNameMatches = packageName.equals(whitelistPackageName);
-                boolean packageCertMatches = Arrays.equals(whitelistHash, packageHash);
-                if (packageNameMatches && packageCertMatches) {
-                    Log.d(PrivilegedService.TAG, "Package is allowed to access the privileged extension!");
-                    return true;
-                }
+            boolean packageNameMatches = packageName.equals(WHITELIST_PACKAGE_NAME);
+            boolean packageCertMatches = Arrays.equals(whitelistHash, packageHash);
+            if (packageNameMatches && packageCertMatches) {
+                Log.d(PrivilegedService.TAG, "Package is allowed to access the privileged extension!");
+                return true;
             }
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e.getMessage());
