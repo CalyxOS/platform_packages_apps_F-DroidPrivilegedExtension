@@ -18,6 +18,7 @@ package org.fdroid.fdroid.privileged;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
@@ -26,6 +27,7 @@ import android.util.Log;
 import android.util.Pair;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
@@ -47,6 +49,18 @@ public class AccessProtectionHelper {
         this.context = context;
         this.pm = context.getPackageManager();
         this.whitelist = whitelist;
+
+        try {
+            SharedPreferences sharedPreferences = (SharedPreferences) Context.class.getDeclaredMethod(
+                    "getSharedPreferences", File.class, int.class).invoke(context,
+                    new File("/product/etc/" + context.getPackageName() +
+                            "/client_whitelist.xml"), Context.MODE_PRIVATE);
+            for (String entry : sharedPreferences.getStringSet("whitelist", null)) {
+                this.whitelist.add(new Pair<String, String>(entry.split("/")[0], entry.split("/")[1]));
+            }
+        } catch (Exception e) {
+            Log.e(PrivilegedService.TAG, "Failed to read client whitelist file", e);
+        }
     }
 
     /**
@@ -83,13 +97,14 @@ public class AccessProtectionHelper {
             for (Pair whitelistEntry : whitelist) {
                 String whitelistPackageName = (String) whitelistEntry.first;
                 String whitelistHashString = (String) whitelistEntry.second;
+                Log.d(PrivilegedService.TAG, "Allowed package name: " + whitelistPackageName);
+                Log.d(PrivilegedService.TAG, "Allowed cert hash: " + whitelistHashString);
                 byte[] whitelistHash = hexStringToByteArray(whitelistHashString);
 
                 MessageDigest digest = MessageDigest.getInstance("SHA-256");
                 byte[] packageHash = digest.digest(currentPackageCert);
 
                 String packageHashString = new BigInteger(1, packageHash).toString(16);
-                Log.d(PrivilegedService.TAG, "Allowed cert hash: " + whitelistHashString);
                 Log.d(PrivilegedService.TAG, "Package cert hash: " + packageHashString);
 
                 boolean packageNameMatches = packageName.equals(whitelistPackageName);
