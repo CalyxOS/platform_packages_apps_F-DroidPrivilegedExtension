@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e52225cc_2319896a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-09-30T08:20:39Z",
+      "side": 1,
+      "message": "Actually we may want to move this whitelist to the prebuilt repo, but for now it\u0027s ok here.",
+      "revId": "ead8a0cd322f88d30167994d9aa39181989b1cbe",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
