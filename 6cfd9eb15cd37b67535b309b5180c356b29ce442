@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4330287_3fdf3e60",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-10-13T16:48:22Z",
+      "side": 1,
+      "message": "Won\u0027t be needed if we merge xml",
+      "revId": "6cfd9eb15cd37b67535b309b5180c356b29ce442",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
