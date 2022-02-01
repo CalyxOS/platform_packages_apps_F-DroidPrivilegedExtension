@@ -34,8 +34,8 @@ import java.util.HashSet;
 public class ClientWhitelist {
 
     public static HashSet<Pair<String, String>> whitelist = new HashSet<>(Arrays.asList(
-            // certificate SHA-256, signed with keys/common/org.calyxos.fdroid
-            new Pair<>("org.fdroid.fdroid", "c633ff86537b7bfe7daa3e2403d95489e215e11df63cf3aca54ad26c893bdad9")
+            // certificate SHA-256, signed with testkey
+            new Pair<>("org.fdroid.fdroid", "a40da80a59d170caa950cf15c18c454d47a39b26989d8b640ecd745ba71bf5dc")
     ));
 
 }
