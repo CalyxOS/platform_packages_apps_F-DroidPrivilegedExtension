@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "958cf41a_4a3d06ad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-02-01T16:17:22Z",
+      "side": 1,
+      "message": "Only for testing, goes with:\n\nprebuilts/calyx/fdroid: https://zifb.in/9h4MhW5Rcz\n",
+      "revId": "3a88cb9abe6af0286baf52bdfeb1fd07867b5ce1",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
