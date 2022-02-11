@@ -16,6 +16,24 @@
       "message": "This needs a lot more changes all around the place. Hold, I\u0027ll do it later.",
       "revId": "aeaa60e6800acc2a5a5780b2dfa8a1b3353512e3",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c663eafe_99701365",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-02-11T20:26:05Z",
+      "side": 1,
+      "message": "That\u0027d actually be for the package name change, topic:rename-fdroid",
+      "parentUuid": "e99bc01c_e0d0737b",
+      "revId": "aeaa60e6800acc2a5a5780b2dfa8a1b3353512e3",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
