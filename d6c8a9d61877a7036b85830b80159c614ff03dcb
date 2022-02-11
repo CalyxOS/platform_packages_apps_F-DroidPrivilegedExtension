@@ -18,6 +18,24 @@
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ca579be_8c69842f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-02-11T20:28:35Z",
+      "side": 1,
+      "message": "Welp let\u0027s discuss on the 12 change, https://review.calyxos.org/c/CalyxOS/platform_packages_apps_F-DroidPrivilegedExtension/+/6395",
+      "parentUuid": "c08dbf7b_fed0deec",
+      "revId": "d6c8a9d61877a7036b85830b80159c614ff03dcb",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a25aa9b7_de108273",
@@ -31,6 +49,24 @@
       "writtenOn": "2022-02-11T20:28:08Z",
       "side": 1,
       "message": "There\u0027s gotta be a better way than this.",
+      "revId": "d6c8a9d61877a7036b85830b80159c614ff03dcb",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "146c5f9d_8fec2cb0",
+        "filename": "app/src/main/java/org/fdroid/fdroid/privileged/AccessProtectionHelper.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-02-11T20:28:35Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a25aa9b7_de108273",
       "revId": "d6c8a9d61877a7036b85830b80159c614ff03dcb",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
