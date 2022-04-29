@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "668e8d20_b9fcb9b2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-04-29T20:47:42Z",
+      "side": 1,
+      "message": "https://gitlab.com/fdroid/privileged-extension/-/merge_requests/72",
+      "revId": "3382b534a4940087300145a462c31a2f3a3b0549",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
