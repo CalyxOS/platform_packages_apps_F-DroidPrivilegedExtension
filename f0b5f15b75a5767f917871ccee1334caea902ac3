@@ -72,6 +72,92 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7e01cafd_14056181",
+        "filename": "app/src/main/java/org/fdroid/fdroid/privileged/PrivilegedService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1000034
+      },
+      "writtenOn": "2022-04-29T10:24:44Z",
+      "side": 1,
+      "message": "setFlags might be wrong, addFlags to avoid overriding any other flag\nIn some CTS tests they set FLAG_ACTIVITY_CLEAR_TASK too, not sure if we want it",
+      "range": {
+        "startLine": 138,
+        "startChar": 24,
+        "endLine": 138,
+        "endChar": 32
+      },
+      "revId": "f0b5f15b75a5767f917871ccee1334caea902ac3",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47be271b_037e5adc",
+        "filename": "app/src/main/java/org/fdroid/fdroid/privileged/PrivilegedService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1000034
+      },
+      "writtenOn": "2022-04-29T10:24:44Z",
+      "side": 1,
+      "message": "I\u0027d rather always be conservative and check if the other received broadcast is what we expect, what is it in this case?\nI\u0027m a bit lost of how we create the intent, but I guess we\u0027re doing it manually in doPackageStage, scary.",
+      "revId": "f0b5f15b75a5767f917871ccee1334caea902ac3",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0a0c59d8_84d45a54",
+        "filename": "app/src/main/java/org/fdroid/fdroid/privileged/PrivilegedService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1000034
+      },
+      "writtenOn": "2022-04-29T10:24:44Z",
+      "side": 1,
+      "message": "https://cs.android.com/android/platform/superproject/+/master:frameworks/base/packages/PackageInstaller/src/com/android/packageinstaller/InstallInstalling.java;l\u003d293?q\u003dPackageInstaller.Session\u0026ss\u003dandroid\nMight be worth checking out the new setup AOSP is using\nThe in/out is mostly the same but there are new additions to the params",
+      "range": {
+        "startLine": 157,
+        "startChar": 17,
+        "endLine": 157,
+        "endChar": 31
+      },
+      "revId": "f0b5f15b75a5767f917871ccee1334caea902ac3",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "721db426_7ffeab53",
+        "filename": "app/src/main/java/org/fdroid/fdroid/privileged/PrivilegedService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1000034
+      },
+      "writtenOn": "2022-04-29T10:24:44Z",
+      "side": 1,
+      "message": "AOSP is now doing 1024 * 1024",
+      "range": {
+        "startLine": 166,
+        "startChar": 43,
+        "endLine": 166,
+        "endChar": 48
+      },
+      "revId": "f0b5f15b75a5767f917871ccee1334caea902ac3",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "49e48df8_dbc147c4",
         "filename": "app/src/main/java/org/fdroid/fdroid/privileged/PrivilegedService.java",
         "patchSetId": 2
@@ -159,6 +245,29 @@
         "startChar": 60,
         "endLine": 238,
         "endChar": 86
+      },
+      "revId": "f0b5f15b75a5767f917871ccee1334caea902ac3",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea704b18_295a8786",
+        "filename": "app/src/main/java/org/fdroid/fdroid/privileged/PrivilegedService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 1000034
+      },
+      "writtenOn": "2022-04-29T10:24:44Z",
+      "side": 1,
+      "message": "Is this doing what you expect?\nI\u0027d make a single intent and then add another action.\nI\u0027m not sure the INSTALL is handled correctly?",
+      "range": {
+        "startLine": 303,
+        "startChar": 0,
+        "endLine": 310,
+        "endChar": 100
       },
       "revId": "f0b5f15b75a5767f917871ccee1334caea902ac3",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
