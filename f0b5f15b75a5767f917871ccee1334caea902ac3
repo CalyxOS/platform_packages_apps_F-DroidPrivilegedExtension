@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d734b7f6_68c39c9b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-04-29T01:43:02Z",
+      "side": 1,
+      "message": "Kinda works. Error / status codes need to be handled properly.",
+      "revId": "f0b5f15b75a5767f917871ccee1334caea902ac3",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
