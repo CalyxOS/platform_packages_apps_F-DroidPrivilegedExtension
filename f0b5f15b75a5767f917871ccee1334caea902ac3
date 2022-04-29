@@ -16,6 +16,23 @@
       "message": "Kinda works. Error / status codes need to be handled properly.",
       "revId": "f0b5f15b75a5767f917871ccee1334caea902ac3",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "573c3d65_84607349",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-04-29T01:48:52Z",
+      "side": 1,
+      "message": "I opened this in Android Studio first but it wanted me to update gradle and that became a rabbit hole (I tried), so I gave up on that for now.\n\nRealised that I could still test things this way.\n\nThis is built in the OS (till gradle is updated), but it can be installed as a user app, and allows silent upgrades :)",
+      "revId": "f0b5f15b75a5767f917871ccee1334caea902ac3",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
