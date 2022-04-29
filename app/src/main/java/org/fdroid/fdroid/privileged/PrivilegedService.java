@@ -55,7 +55,7 @@ public class PrivilegedService extends Service {
     private static final String BROADCAST_ACTION_UNINSTALL =
             "org.fdroid.fdroid.PrivilegedExtension.ACTION_UNINSTALL_COMMIT";
     private static final String BROADCAST_SENDER_PERMISSION =
-            "android.permission.INSTALL_PACKAGES";
+            "org.fdroid.fdroid.privileged.INSTALL_PACKAGES";
     private static final String EXTRA_LEGACY_STATUS = "android.content.pm.extra.LEGACY_STATUS";
 
     private AccessProtectionHelper accessProtectionHelper;
@@ -66,17 +66,6 @@ public class PrivilegedService extends Service {
     private IPrivilegedCallback mCallback;
 
     Context context = this;
-
-    private boolean hasPrivilegedPermissionsImpl() {
-        boolean hasInstallPermission =
-                getPackageManager().checkPermission(Manifest.permission.INSTALL_PACKAGES, getPackageName())
-                        == PackageManager.PERMISSION_GRANTED;
-        boolean hasDeletePermission =
-                getPackageManager().checkPermission(Manifest.permission.DELETE_PACKAGES, getPackageName())
-                        == PackageManager.PERMISSION_GRANTED;
-
-        return hasInstallPermission && hasDeletePermission;
-    }
 
     private void installPackageImpl(Uri packageURI, int flags, String installerPackageName,
                                     final IPrivilegedCallback callback) {
@@ -142,14 +131,20 @@ public class PrivilegedService extends Service {
     private final BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            final int returnCode = intent.getIntExtra(
-                    EXTRA_LEGACY_STATUS, PackageInstaller.STATUS_FAILURE);
-            final String packageName = intent.getStringExtra(
-                    PackageInstaller.EXTRA_PACKAGE_NAME);
-            try {
-                mCallback.handleResult(packageName, returnCode);
-            } catch (RemoteException e1) {
-                Log.e(TAG, "RemoteException", e1);
+            final int returnCode = intent.getIntExtra(PackageInstaller.EXTRA_STATUS,
+                    PackageInstaller.STATUS_FAILURE);
+            if (returnCode == PackageInstaller.STATUS_PENDING_USER_ACTION) {
+                Intent intent2 = intent.getParcelableExtra(Intent.EXTRA_INTENT);
+                intent2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent2);
+            } else {
+                final String packageName = intent.getStringExtra(PackageInstaller.EXTRA_PACKAGE_NAME);
+                final String extra = intent.getStringExtra(PackageInstaller.EXTRA_STATUS_MESSAGE);
+                try {
+                    mCallback.handleResult(packageName, returnCode);
+                } catch (Exception e) {
+                    Log.e(TAG, packageName + " " + extra, e);
+                }
             }
         }
     };
@@ -163,6 +158,7 @@ public class PrivilegedService extends Service {
         final PackageManager pm = getPackageManager();
         final PackageInstaller.SessionParams params = new PackageInstaller.SessionParams(
                 PackageInstaller.SessionParams.MODE_FULL_INSTALL);
+        params.setRequireUserAction(PackageInstaller.SessionParams.USER_ACTION_NOT_REQUIRED);
         final PackageInstaller packageInstaller = pm.getPackageInstaller();
         PackageInstaller.Session session = null;
         try {
@@ -187,7 +183,7 @@ public class PrivilegedService extends Service {
                     this /*context*/,
                     sessionId,
                     broadcastIntent,
-                    PendingIntent.FLAG_UPDATE_CURRENT);
+                    PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_MUTABLE);
             session.commit(pendingIntent.getIntentSender());
         } catch (IOException e) {
             Log.d(TAG, "Failure", e);
@@ -200,8 +196,7 @@ public class PrivilegedService extends Service {
     private final IPrivilegedService.Stub binder = new IPrivilegedService.Stub() {
         @Override
         public boolean hasPrivilegedPermissions() {
-            boolean callerIsAllowed = accessProtectionHelper.isCallerAllowed();
-            return callerIsAllowed && hasPrivilegedPermissionsImpl();
+            return accessProtectionHelper.isCallerAllowed();
         }
 
         @Override
@@ -240,7 +235,7 @@ public class PrivilegedService extends Service {
                         context, // context
                         0, // arbitary
                         broadcastIntent,
-                        PendingIntent.FLAG_UPDATE_CURRENT);
+                        PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_MUTABLE);
                 packageInstaller.uninstall(packageName, pendingIntent.getIntentSender());
             } else {
                 deletePackageImpl(packageName, flags, callback);
