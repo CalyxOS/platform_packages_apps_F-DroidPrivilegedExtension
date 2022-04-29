@@ -88,6 +88,24 @@
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0034fd04_1f7a6c7b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-04-29T11:05:19Z",
+      "side": 1,
+      "message": "It\u0027s short term, just for target sdk, once fdroidclient is at 31 this would be moot, no need for the additional complexity.\n\nAlso the criteria for apps being updated is sdk \u003e\u003d 29",
+      "parentUuid": "5d86ca23_05318c5f",
+      "revId": "f0b5f15b75a5767f917871ccee1334caea902ac3",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7e01cafd_14056181",
