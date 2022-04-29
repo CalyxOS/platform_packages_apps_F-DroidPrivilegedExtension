@@ -72,6 +72,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5d86ca23_05318c5f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000021
+      },
+      "writtenOn": "2022-04-29T10:40:07Z",
+      "side": 1,
+      "message": "Sounds interesting with some nice potential benefits.  I\u0027m still trying to figure out all the details.  Are you thinking that this is a short term workaround or something to support in the long term?  Do you have a reason beyond targetSdkVersion to handle this in the extension rather than directly in the app (e.g. Aurora or F-Droid)?\n\nI\u0027m guessing this extension will then:\n* show an extra prompt on new installs\n* not allow auto-updates for apps that do not meet the criteria required by this new API, e.g. targetSdkVersion \u003c 31.\n\nSay that F-Droid can implement everything it needs with targetSdkVersion 31, is there any reason to keep using the old DefaultInstaller API?  I\u0027m thinking can standardize F-Droid on two installer APIs, DefaultInstaller (with either new or old API) and ExtensionInstaller (basically, the current PrivilegedInstaller but which supports more than one official extension).  Then this version could be shipped on f-droid.org in addition to Privileged Extension, and F-Droid could support both FPE and this.",
+      "parentUuid": "37445ebe_a28f8416",
+      "revId": "f0b5f15b75a5767f917871ccee1334caea902ac3",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7e01cafd_14056181",
         "filename": "app/src/main/java/org/fdroid/fdroid/privileged/PrivilegedService.java",
         "patchSetId": 2
