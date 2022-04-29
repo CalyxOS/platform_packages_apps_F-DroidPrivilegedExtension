@@ -33,6 +33,23 @@
       "message": "I opened this in Android Studio first but it wanted me to update gradle and that became a rabbit hole (I tried), so I gave up on that for now.\n\nRealised that I could still test things this way.\n\nThis is built in the OS (till gradle is updated), but it can be installed as a user app, and allows silent upgrades :)",
       "revId": "f0b5f15b75a5767f917871ccee1334caea902ac3",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7931191e_bab85cfd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000021
+      },
+      "writtenOn": "2022-04-29T07:31:31Z",
+      "side": 1,
+      "message": "I\u0027m not sure what the context or reason for this change is.  Is this a required change because of a new API?  Is there some background info somewhere?",
+      "revId": "f0b5f15b75a5767f917871ccee1334caea902ac3",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
