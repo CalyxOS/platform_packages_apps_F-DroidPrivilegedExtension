@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0f7fa7eb_bc74250b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-06-06T18:22:23Z",
+      "side": 1,
+      "message": "Ship this for now till we have unprivileged privext ready.\n\nPanic will be an issue with that though.",
+      "revId": "12acacaf3335aec1ebbd9935a5729ab606e9b1f0",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
