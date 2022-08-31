@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a0cd3927_9b512247",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-08-31T13:16:17Z",
+      "side": 1,
+      "message": "Ideally we don\u0027t ship this for 13 but I don\u0027t want to hold back builds either.",
+      "revId": "9fb0394285e4c71a1933819bd7740f23a4190804",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
