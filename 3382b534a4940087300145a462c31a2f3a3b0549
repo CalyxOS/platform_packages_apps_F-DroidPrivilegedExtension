@@ -16,6 +16,23 @@
       "message": "https://gitlab.com/fdroid/privileged-extension/-/merge_requests/72",
       "revId": "3382b534a4940087300145a462c31a2f3a3b0549",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc480691_a7bc6ea9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-06-29T12:51:06Z",
+      "side": 1,
+      "message": "Good to go, long gone from client.",
+      "revId": "3382b534a4940087300145a462c31a2f3a3b0549",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
